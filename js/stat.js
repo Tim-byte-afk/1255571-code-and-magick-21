@@ -30,10 +30,6 @@ const renderCloud = function (ctx, x, y, color) {
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
 };
 
-const getRandomNumber = function (min, max) {
-  return Math.random() * (max - min) + min;
-};
-
 const getMaxElement = function (arr) {
   let maxElement = arr[0];
 
@@ -71,7 +67,7 @@ window.renderStatistics = function (ctx, names, times) {
     if (names[i] === `Вы`) {
       ctx.fillStyle = COLOR_RED;
     } else {
-      ctx.fillStyle = `hsl(240, 100%, ` + getRandomNumber(1, BAR_MAX_LIGHTNESS) + `%)`;
+      ctx.fillStyle = `hsl(240, 100%, ` + window.util.getRandomNum(1, BAR_MAX_LIGHTNESS) + `%)`;
     }
     ctx.fillRect(
         textX,
